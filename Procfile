@@ -1,0 +1,1 @@
+web: gunicorn --chdir Processor/ app:app --log-file=-
