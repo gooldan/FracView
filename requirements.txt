@@ -1,2 +1,6 @@
 Flask
 gunicorn
+requests
+matplotlib
+argparse
+PyQt5==5.10.0
