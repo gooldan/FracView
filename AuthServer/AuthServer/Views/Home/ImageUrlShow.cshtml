@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "ImageUrlShow";
+}
+
+<h2>Полученное с сервера изображение:</h2>
+@model List<Fractal>
+@foreach (var fractal in Model)
+{
+    <li>Альфа: @fractal.alpha  Бета: @fractal.beta Гамма: @fractal.gamma</li>
+    <img src=@fractal.url alt="Sample Photo" />
+}
+

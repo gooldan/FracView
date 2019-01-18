@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    ViewBag.myData = ViewBag.myData == null ? "Загружается" : ViewBag.myData;
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h2>Добрый день, старый друг</h2>
+    <h3>Твоё богатство:</h3>
+    @model List<Fractal>
+    @foreach (var fractal in Model)
+    {
+        <li>Альфа: @fractal.alpha  Бета: @fractal.beta Гамма: @fractal.gamma</li>
+        <img src=@fractal.url alt="Sample Photo" />
+    }  
+}
+else
+{
+    <h2>Вы не авторизованы и можете только запрашивать информацию с сервера, но не можете производить расчёты.</h2>
+    <h2>Для использования всех возможностей системы, пожалуйста, пройдите процедуру регистрации.</h2>
+    <h2>Вам не сложно - нам приятно.</h2>
+}
