@@ -4,3 +4,5 @@ requests
 matplotlib
 argparse
 PyQt5==5.10.0
+boto
+boto3
