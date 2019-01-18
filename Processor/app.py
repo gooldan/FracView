@@ -108,6 +108,7 @@ def getfrac():
                 run_stub(a+b*1j, img_name)
                 client.upload_file(img_name, 'test-govno', file_name, ExtraArgs={'ACL':'public-read'})
                 resurl = "https://s3.amazonaws.com/test-govno/" + file_name
+                os.remove(img_name)
                 return jsonify(supurl = resurl)
             else:
                 print("WARNING: Some data is empty. got body:", body, "a:", a, "b:", b)                
